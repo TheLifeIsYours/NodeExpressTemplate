@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  div(id="site-header" class="center-text fs4_5em ffCustome cLightPurple pointer" title="Find likeminded people, with like minded kinks")
+    div() Welcome to
+    span(class="fs1_3em") F
+    span() etish
+    span(class="fs1_3em") S
+    span() eeker
+  div(id="entrance-form" class="fs1_3em pt8em")
+    div() Are you above the age of 18?
+    div(class="flex row around pt1em")
+      a(href="/login")
+        div(class="flex center center-items w4em h2em bSolid bcLight4 br0_4em bw0_15em bBrightGreen cWhite pointer")
+          div() Yes
+      a(onclick="location = 'http://google.com'")
+        div(class="flex center center-items w4em h2em bSolid bcLight4 br0_4em bw0_15em bRed cWhite pointer")
+          div() No
