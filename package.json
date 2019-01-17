@@ -1,7 +1,7 @@
 {
   "name": "simple-express-template",
   "version": "1.0.0",
-  "description": "Project description goes in package.json",
+  "description": "Enter your own project description here",
   "scripts": {
     "start": "node ./bin/www"
   },
