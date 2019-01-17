@@ -4,8 +4,21 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
-//Set route to path
+//Set path to the route that handeles requsts from clients uri ending
+/*------------------------------------------------------------*/
+/* An example of a route would be for                         */
+/* https://yourWebsite.com/home                               */
+/* the route for this uri ending; "/home", would be located   */
+/* in the file; './routes/home.js'                            */
+/* const home = require('./routes/home');                     */
+/*------------------------------------------------------------*/
+/* Later down in this file, you'll have to direct which uri   */
+/* ending goes to which route                                 */
+/* app.use(urlEnding, routePath);                             */
+/*------------------------------------------------------------*/
 const home = require('./routes/home');
+
+/*------------------------------------------------------------*/
 
 const app = express();
 
@@ -29,9 +42,17 @@ app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-//URI to routes
+//Point URI endings to routes
+/*------------------------------------------------------------*/
+/* This is where you set the uri ending to the rotes path     */
+/* You can see from the example below that we have set uri    */
+/* ending "/" and "/home" to point to the home route we set   */
+/* earlier in the file                                        */
+/*------------------------------------------------------------*/
 app.use('/', home);
 app.use('/home', home);
+
+/*------------------------------------------------------------*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
