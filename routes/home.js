@@ -12,9 +12,11 @@ router.get('/', async (req, res, next) => {
 /*Post request*/
 router.post('/action', async (req, res, next) => {
   res.setHeader("Content-Type", "text/html");
-  if(your post succeeded){
+  //your post succeeded, would normally make a file that gets
+  //a callback telling the post has been successfull
+  if(true){
     res.redirect(`/mySuccessPage`);
-  }else{
+  }else{s
     res.redirect(`/error?error=${err}`);
   }
 });
